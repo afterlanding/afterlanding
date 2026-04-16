@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { PrimaryButton, SecondaryButton } from "@/components/ui";
 import { supabase } from "@/lib/supabase/client";
@@ -19,6 +20,7 @@ const feedbackClassNames: Record<NonNullable<AuthFeedback>["tone"], string> = {
 };
 
 export function AuthForms() {
+  const router = useRouter();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [signUpUsername, setSignUpUsername] = useState("");
@@ -53,6 +55,7 @@ export function AuthForms() {
       tone: "success",
       message: "Welcome back!",
     });
+    router.refresh();
     setLoginPending(false);
   }
 
@@ -85,6 +88,7 @@ export function AuthForms() {
       tone: "info",
       message: "Confirm your email - We've sent you a confirmation link.",
     });
+    router.refresh();
     setSignUpPending(false);
     setSignUpPassword("");
   }

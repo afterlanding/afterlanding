@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { navItems, userPreview } from "@/lib/site-data";
+import { navItems } from "@/lib/site-data";
+import { SessionNav } from "./session-nav";
 
 type AppShellProps = {
   title: string;
@@ -44,17 +45,7 @@ export function AppShell({
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 rounded-[1.5rem] border border-sky-100 bg-white px-4 py-2 shadow-sm">
-            <div>
-              <p className="text-sm font-semibold text-secondary">
-                {userPreview.displayName}
-              </p>
-              <p className="text-xs text-muted">{userPreview.airlineRole}</p>
-            </div>
-            <button className="rounded-full border border-sky-100 px-3 py-2 text-xs font-semibold text-secondary transition hover:border-sky-300 hover:text-primary-strong">
-              Logout
-            </button>
-          </div>
+          <SessionNav />
         </div>
       </header>
 
