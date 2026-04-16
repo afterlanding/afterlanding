@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description:
     "The social network for pilots and flight attendants to meet and organize activities around the world",
   applicationName: "AfterLanding",
-  themeColor: "#0ea5e9",
   openGraph: {
     title: "AfterLanding - Connect with Airline Crews Worldwide",
     description:
@@ -21,6 +20,10 @@ export const metadata: Metadata = {
     description:
       "The social network for pilots and flight attendants to meet and organize activities around the world",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0ea5e9",
 };
 
 export default function RootLayout({

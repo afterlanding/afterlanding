@@ -1,5 +1,6 @@
 import { AppShell } from "@/components/app-shell";
 import { Field, PrimaryButton, SecondaryButton } from "@/components/ui";
+import { AuthStatus } from "./auth-status";
 
 export default function AuthPage() {
   return (
@@ -14,6 +15,8 @@ export default function AuthPage() {
         </>
       }
     >
+      <AuthStatus />
+
       <section className="grid gap-4 lg:grid-cols-2">
         <article className="section-card">
           <div className="flex gap-2">
