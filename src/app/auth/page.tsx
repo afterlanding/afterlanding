@@ -1,5 +1,4 @@
 import { AppShell } from "@/components/app-shell";
-import { PrimaryButton, SecondaryButton } from "@/components/ui";
 import { AuthStatus } from "./auth-status";
 import { AuthForms } from "./auth-forms";
 
@@ -8,13 +7,7 @@ export default function AuthPage() {
     <AppShell
       badge="Account Access"
       title="Login or Register"
-      subtitle="Access your crew network, manage your profile, and start checking in at destinations worldwide."
-      actions={
-        <>
-          <PrimaryButton>Login</PrimaryButton>
-          <SecondaryButton>Create Account</SecondaryButton>
-        </>
-      }
+      subtitle="Use your email and password to create an account, sign in, and verify that your session is working correctly."
     >
       <AuthStatus />
       <AuthForms />

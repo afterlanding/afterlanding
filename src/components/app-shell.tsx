@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { navItems } from "@/lib/site-data";
 import { SessionNav } from "./session-nav";
 
 type AppShellProps = {
@@ -32,18 +31,6 @@ export function AppShell({
               SkyMeet
             </div>
           </div>
-
-          <nav className="hidden flex-wrap items-center gap-2 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-secondary transition hover:bg-white hover:text-primary-strong"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
 
           <SessionNav />
         </div>
