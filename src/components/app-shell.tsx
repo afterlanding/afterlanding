@@ -20,17 +20,12 @@ export function AppShell({
     <div className="pb-16">
       <header className="sticky top-0 z-20 border-b border-white/40 bg-white/70 backdrop-blur-xl">
         <div className="app-shell flex flex-wrap items-center justify-between gap-4 py-4">
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="flex h-11 items-center rounded-full bg-secondary px-4 text-sm font-semibold tracking-[0.22em] text-white uppercase"
-            >
-              AfterLanding
-            </Link>
-            <div className="hidden rounded-full bg-linear-to-r from-sky-400 to-cyan-500 px-4 py-2 text-sm font-semibold text-white sm:block">
-              SkyMeet
-            </div>
-          </div>
+          <Link
+            href="/"
+            className="flex h-11 items-center rounded-full bg-secondary px-4 text-sm font-semibold tracking-[0.22em] text-white uppercase"
+          >
+            AfterLanding
+          </Link>
 
           <SessionNav />
         </div>

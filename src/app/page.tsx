@@ -6,14 +6,9 @@ export default function Home() {
       <header className="app-shell pt-6">
         <div className="glass-panel overflow-hidden rounded-[2rem] px-6 py-5 sm:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold tracking-[0.22em] text-white uppercase">
-                AfterLanding
-              </span>
-              <span className="rounded-full bg-linear-to-r from-sky-400 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">
-                SkyMeet
-              </span>
-            </div>
+            <span className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold tracking-[0.22em] text-white uppercase">
+              AfterLanding
+            </span>
             <nav className="flex flex-wrap items-center gap-2">
               <Link className="rounded-full px-4 py-2 text-sm font-semibold text-secondary" href="/auth">
                 Login / Register
