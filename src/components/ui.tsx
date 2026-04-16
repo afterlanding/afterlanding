@@ -1,3 +1,10 @@
+type ButtonProps = {
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
 type FieldProps = {
   label: string;
   placeholder?: string;
@@ -37,17 +44,37 @@ export function Field({
   );
 }
 
-export function PrimaryButton({ children }: { children: React.ReactNode }) {
+export function PrimaryButton({
+  children,
+  type = "button",
+  disabled,
+  onClick,
+}: ButtonProps) {
   return (
-    <button className="rounded-full bg-linear-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:scale-[1.01]">
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      className="rounded-full bg-linear-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-70"
+    >
       {children}
     </button>
   );
 }
 
-export function SecondaryButton({ children }: { children: React.ReactNode }) {
+export function SecondaryButton({
+  children,
+  type = "button",
+  disabled,
+  onClick,
+}: ButtonProps) {
   return (
-    <button className="rounded-full border border-sky-200 bg-white px-5 py-3 text-sm font-semibold text-secondary transition hover:border-sky-300 hover:text-primary-strong">
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      className="rounded-full border border-sky-200 bg-white px-5 py-3 text-sm font-semibold text-secondary transition hover:border-sky-300 hover:text-primary-strong disabled:cursor-not-allowed disabled:opacity-70"
+    >
       {children}
     </button>
   );

@@ -31,8 +31,24 @@ export function AuthStatus() {
 
     checkSession();
 
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (cancelled) {
+        return;
+      }
+
+      if (session) {
+        setStatus(`Signed in as ${session.user.email ?? "crew member"}.`);
+        return;
+      }
+
+      setStatus("Supabase connected. No active session yet.");
+    });
+
     return () => {
       cancelled = true;
+      subscription.unsubscribe();
     };
   }, []);
 
